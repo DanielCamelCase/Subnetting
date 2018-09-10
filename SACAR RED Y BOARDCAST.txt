@@ -1,0 +1,20 @@
+Para sacar la dirección de red de una dirección IP teniendo tambien su mascara,
+ debes pasar las dos direcciones a binario y hacer la operacion AND entre ellas,
+ la operacion AND solo resulta 1 cuando los dos son 1:
+
+IP  = 11000000.10101000.00010100.00011001
+MASK= 11111111.11111111.11111111.11000000
+AND = 11000000.10101000.00010100.00000000
+
+Pasamos el resultado a decimal = 192.168.20.0 y ya tenemos la direccion de RED
+ de la primera IP.
+
+Para sacar la direccion de broadcast, debemos pasar tambien a binario la IP y
+ la mascara, y hacer la operación OR entre la IP y el NOT de la mascara.
+ La operación OR solo es 1 cuando una de las dos o los dos es 1, 
+y el NOT de la mascara, es el contrario, o sea, cambiar los bits 
+(1 por 0 y 0 por 1):
+
+IP       = 11000000.10101000.00010100.00011001
+NOT MASK = 00000000.00000000.00000000.00111111
+OR       = 11000000.10101000.00010100.00111111
